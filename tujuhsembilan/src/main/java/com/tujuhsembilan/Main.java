@@ -1,6 +1,9 @@
 package com.tujuhsembilan;
 
-import javax.print.Doc;
+import com.childs.Doctor;
+import com.childs.Programmer;
+import com.childs.Teacher;
+import com.parents.Person;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -19,22 +22,39 @@ public class Main {
         sayHello(person3);
        // System.out.println(((Programmer)person1).technology);//recasting
     }
-    static void sayHello(Person person) {
-        String message;
-        if(person instanceof Programmer) {
-            Programmer programmer = (Programmer) person;
-            message = "Hello, " + programmer.name + ". Seorang Programmer " + programmer.technology + ".";
-        } else if(person instanceof Teacher) {
-            Teacher teacher = (Teacher) person;
-            message = "Hello, " + teacher.name + ". Seorang guru " + teacher.subject + ".";
-        } else if(person instanceof Doctor) {
-            Doctor doctor = (Doctor) person;
-            message = "Hello, " + doctor.name + ". Seorang doctor " + doctor.specialist + ".";
-        } else {
-            message = "Hello " + person.name + ".";
-        }
-        System.out.println(message);
+//    static void sayHello(Person person) {
+//        String message;
+//        if(person instanceof Programmer) {
+//            Programmer programmer = (Programmer) person;
+//            message = "Hello, " + programmer.name + ". Seorang Programmer " + programmer.technology + ".";
+//        } else if(person instanceof Teacher) {
+//            Teacher teacher = (Teacher) person;
+//            message = "Hello, " + teacher.name + ". Seorang guru " + teacher.subject + ".";
+//        } else if(person instanceof Doctor) {
+//            Doctor doctor = (Doctor) person;
+//            message = "Hello, " + doctor.name + ". Seorang doctor " + doctor.specialist + ".";
+//        } else {
+//            message = "Hello " + person.name + ".";
+//        }
+//        System.out.println(message);
+//    }
+static void sayHello(Person person) {
+    String message;
+    if(person instanceof Programmer) {
+        Programmer programmer = (Programmer) person;
+        message = "Hello, " + programmer.getName() + ". Seorang Programmer " + programmer.getTechnology() + ".";
+    } else if(person instanceof Teacher) {
+        Teacher teacher = (Teacher) person;
+        message = "Hello, " + teacher.getName() + ". Seorang guru " + teacher.getSubject() + ".";
+    } else if(person instanceof Doctor) {
+        Doctor doctor = (Doctor) person;
+        message = "Hello, " + doctor.getName() + ". Seorang doctor " + doctor.getSpecialist() + ".";
+    } else {
+        message = "Hello " + person.getName() + ".";
     }
+    System.out.println(message);
+}
+
 
 //       Person person1 = new Person();
 //       person1.name = "Boris";
